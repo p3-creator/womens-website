@@ -18,7 +18,7 @@ ul{
 }
 
 .sit {
-    background:  rgb(248, 227, 229);
+    background:  rgb(255, 244, 245);
     padding: 15px 0;
 
 }
@@ -82,7 +82,7 @@ ul{
 }
 
 header .con{
-  background-color: rgb(221, 176, 172);
+  background-color: rgb(255, 226, 223);
   height: 100px;
   width: 100%;
   padding: 50px 130px;
@@ -333,7 +333,7 @@ body {
   }
   
   button:hover {
-    background: #f63c3c;
+    background: #fed6d6;
   }
   
   .toggle-text {
@@ -496,4 +496,15 @@ body {
       font-weight: 200;
       font-size: 14px;
       color: rgb(241, 145, 27);
+  }
+
+  .follow{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:50px;
+    margin-bottom: 50px;
+  }
+  .follow a{
+    font-size: 28px;
   }
