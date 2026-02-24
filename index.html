@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
 </head>
-<body>
-    <section class="sit">
-     <div class="box">
-        <ul>
-            <li>phone: +01 7657509</li>
-            <li>email:prni@gmail.com</li>
-        </ul>
-        <ul>
-            <li>gift card</li>
-            <li>track order</li>
-            <li>language</li>
-        </ul>
-    </div>
-    </section>
-    
-<header>
-    <div class="con">
-        <div>
-            <a href="index.html"><img class="logo" src="https://d3bcr1jr7tht1q.cloudfront.net/eyJidWNrZXQiOiJtdWx0aXdlYi1jZG4iLCJrZXkiOiIxL3B1YmxpYy8xMzg5ZDAyNC1zaWxvbi1ncm91cC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjk2MCwiZml0IjoiaW5zaWRlIn19fQ==" alt=""></a> 
-        </div>
-       <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li>ABOUT US</li>
-        <li>SERVICES</li>
-        <li>BLOG</li>
-        <li>CONTACT</li></p>
-       </ul>
 
-        <div class="dropdown">
+<body>
+  <section class="sit">
+    <div class="box">
+      <ul>
+        <li>phone: +01 7657509</li>
+        <li>email:prni@gmail.com</li>
+      </ul>
+      <ul>
+        <li>gift card</li>
+        <li>track order</li>
+        <li>language</li>
+      </ul>
+    </div>
+  </section>
+
+  <header>
+    <main>
+      <div class="con">
+        <div>
+          <a href="index.html"><img class="logo"
+              src="https://d3bcr1jr7tht1q.cloudfront.net/eyJidWNrZXQiOiJtdWx0aXdlYi1jZG4iLCJrZXkiOiIxL3B1YmxpYy8xMzg5ZDAyNC1zaWxvbi1ncm91cC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjk2MCwiZml0IjoiaW5zaWRlIn19fQ=="
+              alt=""></a>
+        </div>
+        <input type="text" class="mobile-search-bar" placeholder="Search...">
+
+        <div class="nav-elements" id="nav-elements">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li>ABOUT US</li>
+            <li>SERVICES</li>
+            <li>CONTACT</li>
+          </ul>
+
+          <div class="dropdown">
             <select id="category">
               <option value="" disabled selected>Our Products</option>
               <option value="clothing">Clothing</option>
@@ -47,331 +55,402 @@
               <option value="shoes">Shoes</option>
             </select>
           </div>
-        
-       <ul>
-        <li><i class="fa fa-search s" aria-hidden="true"></i></li>
-        <li><i class="fa fa-shopping-cart s" aria-hidden="true"></i></li>
-        <li><i class="fa fa-heart s" aria-hidden="true"></i></li>
-       </ul>
+
+          <ul class="header-icons">
+            <li><i class="fa fa-search s" aria-hidden="true"></i></li>
+            <li><i class="fa fa-shopping-cart s" aria-hidden="true"></i></li>
+            <li><i class="fa fa-heart s" aria-hidden="true"></i></li>
+          </ul>
+
+          <!-- Login Button -->
+          <div class="login-wrapper">
+            <button id="login-btn" class="btn">Login</button>
+
+            <!-- Modal -->
+            <div id="login-modal" class="modal">
+              <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h1 id="form-title">LOGIN</h1>
+
+                <!-- Login Form -->
+                <form id="login-form" class="form active" onsubmit="return validateLogin(event)">
+                  <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" placeholder="Enter your password"
+                      minlength="6" required>
+                  </div>
+                  <button type="submit">Login</button>
+                  <p class="toggle-text">Don't have an account? <a href="#" id="show-register">sign up</a></p>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" class="form" onsubmit="return validateRegister(event)">
+                  <div class="form-group">
+                    <label for="register-name">Name</label>
+                    <input type="text" id="register-name" name="name" placeholder="Enter your name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" name="email" placeholder="Enter your email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" name="password" placeholder="Enter a strong password"
+                      minlength="6" required>
+                  </div>
+                  <button type="submit">sign up</button>
+                  <p class="toggle-text">Already have an account? <a href="#" id="show-login">Login</a></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
-    
-     <!-- Login Button -->
-      <div>
-       <button id="login-btn" class="btn">Login</button>
 
-     <!-- Modal -->
-      <div id="login-modal" class="modal">
-       <div class="modal-content">
-         <span class="close-btn">&times;</span>
-          <h1 id="form-title">LOGIN</h1>
-      
-     <!-- Login Form -->
-      <form id="login-form" class="form active" onsubmit="return validateLogin(event)">
-        <div class="form-group">
-          <label for="login-email">Email</label>
-          <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+        <div class="hamburger" id="hamburger-btn">
+          <i class="fa fa-bars"></i>
         </div>
-        <div class="form-group">
-          <label for="login-password">Password</label>
-          <input type="password" id="login-password" name="password" placeholder="Enter your password" minlength="6" required>
-        </div>
-        <button type="submit">Login</button>
-        <p class="toggle-text">Don't have an account? <a href="#" id="show-register">sign up</a></p>
-      </form>
-      
-      <!-- Register Form -->
-      <form id="register-form" class="form" onsubmit="return validateRegister(event)">
-        <div class="form-group">
-          <label for="register-name">Name</label>
-          <input type="text" id="register-name" name="name" placeholder="Enter your name" required>
-        </div>
-        <div class="form-group">
-          <label for="register-email">Email</label>
-          <input type="email" id="register-email" name="email" placeholder="Enter your email" required>
-        </div>
-        <div class="form-group">
-          <label for="register-password">Password</label>
-          <input type="password" id="register-password" name="password" placeholder="Enter a strong password" minlength="6" required>
-        </div>
-        <button type="submit">sign up</button>
-        <p class="toggle-text">Already have an account? <a href="#" id="show-login">Login</a></p>
-      </form>
-    </div>
-  </div>
- </div>
-</div>
-</header>
+      </div>
+  </header>
 
-<div class="con">
+  <div class="con">
     <div class="product-container" id="products"></div>
   </div>
 
 
 
-<div class="con">
-<div class="owl-carousel">
-    <div><img src="https://i.pinimg.com/originals/bc/36/85/bc3685a9d258d94c46ede838b118d96c.jpg" alt=""></div>
-    <div><img src="https://marketplace.canva.com/EAFfT9NH-JU/1/0/1600w/canva-gray-minimalist-fashion-big-sale-banner-TvkdMwoxWP8.jpg" alt=""></div>
-    <div><img src="https://graphicgoogle.com/wp-content/uploads/2017/10/Facebook-New-Fashion-Sale-Banner.jpg" alt=""></div>
-    <div><img src="https://i.pinimg.com/originals/b9/fe/ea/b9feea28f8692ee86b18812f743af3fb.jpg" alt=""></div>
+  <div class="con">
+    <div class="owl-carousel">
+      <div><img src="https://i.pinimg.com/originals/bc/36/85/bc3685a9d258d94c46ede838b118d96c.jpg" alt=""></div>
+      <div><img
+          src="https://marketplace.canva.com/EAFfT9NH-JU/1/0/1600w/canva-gray-minimalist-fashion-big-sale-banner-TvkdMwoxWP8.jpg"
+          alt=""></div>
+      <div><img src="https://graphicgoogle.com/wp-content/uploads/2017/10/Facebook-New-Fashion-Sale-Banner.jpg" alt="">
+      </div>
+      <div><img src="https://i.pinimg.com/originals/b9/fe/ea/b9feea28f8692ee86b18812f743af3fb.jpg" alt=""></div>
+    </div>
   </div>
-</div>
 
-<section class="mar-bottom">
-     <h1 class="center">FEATURED PRODUCTS</h1>
+  <section class="mar-bottom">
+    <h1 class="center">FEATURED PRODUCTS</h1>
     <div class="con">
-    <div>
+      <div>
         <img class="im1 im-hover" src="https://static-01.daraz.com.np/p/0bf911dcf19a636a100867aab89e632d.jpg" alt="">
-        <h4 class="ta">Red Women Purse</h4><h3 class="pt">$35</h3>
+        <h4 class="ta">Red Women Purse</h4>
+        <h3 class="pt">$35</h3>
         <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-    </div>
-    <div>
-        <img class="im1 im-hover" src="https://media.istockphoto.com/id/477850598/photo/sport-shoes.jpg?s=612x612&w=0&k=20&c=Pk3XBtR7Q6twhW96ntjyAH1OpxsuCJJfVB5x2nMIh0k=" alt="">
-        <h4 class="ta">Pink Women shoes</h4 ><h3 class="pt">$55</h3>
-        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-        
-    </div>
-    <div>
-        <img class="im1 im-hover" src="https://img.freepik.com/premium-photo/beautiful-elegant-evening-women-s-dress-white-background_236836-20097.jpg" alt="">
-        <h4 class="ta">Elegant Women Dress</h4><h3 class="pt">$125</h3>
-        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-    </div>
-</div>
-</section>
-
-<section>
-  <div class="banner2 mar-bottom">
-    <div class="con1">
-     <div class="a">
-      <div>
-       <h2 class="bn">50% OFF</h2><br>
-       <p>ALL WOMEN'S COLLECTION</p>
       </div>
-      <button><b>Shop Now</b></button>
-     </div>
+      <div>
+        <img class="im1 im-hover"
+          src="https://media.istockphoto.com/id/477850598/photo/sport-shoes.jpg?s=612x612&w=0&k=20&c=Pk3XBtR7Q6twhW96ntjyAH1OpxsuCJJfVB5x2nMIh0k="
+          alt="">
+        <h4 class="ta">Pink Women shoes</h4>
+        <h3 class="pt">$55</h3>
+        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+
+      </div>
+      <div>
+        <img class="im1 im-hover"
+          src="https://img.freepik.com/premium-photo/beautiful-elegant-evening-women-s-dress-white-background_236836-20097.jpg"
+          alt="">
+        <h4 class="ta">Elegant Women Dress</h4>
+        <h3 class="pt">$125</h3>
+        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section>
+    <div class="banner2 mar-bottom">
+      <div class="con1">
+        <div class="a">
+          <div>
+            <h2 class="bn">50% OFF</h2><br>
+            <p>ALL WOMEN'S COLLECTION</p>
+          </div>
+          <button><b>Shop Now</b></button>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-<section>
+  <section>
     <h1 class="center">MOST POPULAR</h1>
-   <div class="con mar-bottom">
-   <div>
-       <img class="im1 im-hover" src="https://static-01.daraz.com.np/p/82bc6a79c56f5df0c48dadf781f7cdb6.jpg" alt="">
-       <h4 class="ta">Red Designer Purse</h4><h3 class="pt">$35</h3>
-       <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-   </div>
-   <div>
-       <img class="im1 im-hover" src="https://shop.westside.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0266%2F6276%2F4597%2Ffiles%2F300997492RED_2.jpg%3Fv%3D1730283695&w=2048&q=75" alt="">
-       <h4 class="ta" >Brown Leather Bag</h4><h3 class="pt">$50</h3>
-       <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-   </div>
-   <div>
-       <img class="im1 im-hover" src="https://thumbs.dreamstime.com/b/pair-trendy-sneakers-white-background-151361365.jpg" alt="">
-       <h4 class="ta">Casual shoes</h4><h3 class="pt">$65</h3>
+    <div class="con mar-bottom">
+      <div>
+        <img class="im1 im-hover" src="https://static-01.daraz.com.np/p/82bc6a79c56f5df0c48dadf781f7cdb6.jpg" alt="">
+        <h4 class="ta">Red Designer Purse</h4>
+        <h3 class="pt">$35</h3>
         <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-   </div>
-   <div>
-    <img class="im1 im-hover" src="https://media-assets.grailed.com/prd/listing/temp/9b1bd2dc141848adae5504b51c0543ab?" alt="">
-    <h4 class="ta">black sunshed Glasses</h4><h3 class="pt">$25</h3>
-     <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-</div>
-</div>
+      </div>
+      <div>
+        <img class="im1 im-hover"
+          src="https://shop.westside.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0266%2F6276%2F4597%2Ffiles%2F300997492RED_2.jpg%3Fv%3D1730283695&w=2048&q=75"
+          alt="">
+        <h4 class="ta">Brown Leather Bag</h4>
+        <h3 class="pt">$50</h3>
+        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+      </div>
+      <div>
+        <img class="im1 im-hover"
+          src="https://thumbs.dreamstime.com/b/pair-trendy-sneakers-white-background-151361365.jpg" alt="">
+        <h4 class="ta">Casual shoes</h4>
+        <h3 class="pt">$65</h3>
+        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+      </div>
+      <div>
+        <img class="im1 im-hover"
+          src="https://media-assets.grailed.com/prd/listing/temp/9b1bd2dc141848adae5504b51c0543ab?" alt="">
+        <h4 class="ta">black sunshed Glasses</h4>
+        <h3 class="pt">$25</h3>
+        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+      </div>
+    </div>
 
-<section class="mar-bottom">
-    <h1 class="center">TRENDING PRODUCTS</h1>
-    <div class="con">
-    <div>
-        <img class="im1 im-hover" src="https://m.media-amazon.com/images/I/51yXS6B5BAL._AC_SX569_.jpg" alt="">
-        <h4 class="ta">Blue Women Dress</h4><h3 class="pt">$190</h3>
-         <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-    </div>
-    <div>
-        <img class="im1 im-hover" src="https://img.freepik.com/premium-photo/beautiful-elegant-evening-women-s-dress-white-background_236836-23903.jpg" alt="">
-        <h4 class="ta" >Pink Women Top</h4><h3 class="pt">$48</h3>
-         <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-    </div>
-    <div>
-        <img class="im1 im-hover" src="https://images.asos-media.com/products/free-people-dixie-floral-print-maxi-dress-in-multi/207837855-2?$n_480w$&wid=476&fit=constrain" alt="">
-        <h4 class="ta">Blue Women Bag</h4><h3 class="pt">$70</h3>
-         <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-    </div>
-    <div>
-        <img class="im1 im-hover" src="https://img.freepik.com/premium-photo/beautiful-elegant-evening-women-s-dress-white-background_236836-20097.jpg" alt="">
-        <h4 class="ta">Yellow Women sweater</h4> <h3 class="pt">$55</h3>
-         <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-    </div>
- </div>
- </section>
+    <section class="mar-bottom">
+      <h1 class="center">TRENDING PRODUCTS</h1>
+      <div class="con">
+        <div>
+          <img class="im1 im-hover" src="https://m.media-amazon.com/images/I/51yXS6B5BAL._AC_SX569_.jpg" alt="">
+          <h4 class="ta">Blue Women Dress</h4>
+          <h3 class="pt">$190</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+        <div>
+          <img class="im1 im-hover"
+            src="https://img.freepik.com/premium-photo/beautiful-elegant-evening-women-s-dress-white-background_236836-23903.jpg"
+            alt="">
+          <h4 class="ta">Pink Women Top</h4>
+          <h3 class="pt">$48</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+        <div>
+          <img class="im1 im-hover"
+            src="https://images.asos-media.com/products/free-people-dixie-floral-print-maxi-dress-in-multi/207837855-2?$n_480w$&wid=476&fit=constrain"
+            alt="">
+          <h4 class="ta">Blue Women Bag</h4>
+          <h3 class="pt">$70</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+        <div>
+          <img class="im1 im-hover"
+            src="https://img.freepik.com/premium-photo/beautiful-elegant-evening-women-s-dress-white-background_236836-20097.jpg"
+            alt="">
+          <h4 class="ta">Yellow Women sweater</h4>
+          <h3 class="pt">$55</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+      </div>
+    </section>
 
- <section>
- <div class="con mar-bottom">
-    <div>
-        <img class="im1 im-hover" src="data:image/jpeg;base64,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" alt="">
-        <h4 class="ta">Red Women Dress</h4><h3 class="pt">$85</h3>
-        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-    </div>
-    <div>
-        <img class="im1 im-hover" src="https://png.pngtree.com/png-clipart/20230506/original/pngtree-elegant-white-dress-png-image_9143203.png" alt="">
-        <h4 class="ta" >Blue Women Top</h4><h3 class="pt">$70</h3>
-        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-    </div>
-    <div>
-        <img class="im1 im-hover" src="https://static.vecteezy.com/system/resources/previews/034/715/596/large_2x/ai-generative-women-s-dress-on-a-white-background-isolated-dress-mockup-photo.jpg" alt="">
-        <h4 class="ta">White  Women Top</h4><h3 class="pt">$60</h3>
-        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-    </div>
-    <div>
-       <img class="im1 im-hover" src="https://static.vecteezy.com/system/resources/previews/026/680/620/non_2x/pink-female-dress-mock-up-isolated-on-white-background-ai-generative-photo.jpg" alt="">
-       <h4 class="ta">Pink Women tshirt</h4><h3 class="pt">$45</h3>
-       <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-   </div>
- </div>
-</section>
+    <section>
+      <div class="con mar-bottom">
+        <div>
+          <img class="im1 im-hover"
+            src="data:image/jpeg;base64,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"
+            alt="">
+          <h4 class="ta">Red Women Dress</h4>
+          <h3 class="pt">$85</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+        <div>
+          <img class="im1 im-hover"
+            src="https://png.pngtree.com/png-clipart/20230506/original/pngtree-elegant-white-dress-png-image_9143203.png"
+            alt="">
+          <h4 class="ta">Blue Women Top</h4>
+          <h3 class="pt">$70</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+        <div>
+          <img class="im1 im-hover"
+            src="https://static.vecteezy.com/system/resources/previews/034/715/596/large_2x/ai-generative-women-s-dress-on-a-white-background-isolated-dress-mockup-photo.jpg"
+            alt="">
+          <h4 class="ta">White Women Top</h4>
+          <h3 class="pt">$60</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+        <div>
+          <img class="im1 im-hover"
+            src="https://static.vecteezy.com/system/resources/previews/026/680/620/non_2x/pink-female-dress-mock-up-isolated-on-white-background-ai-generative-photo.jpg"
+            alt="">
+          <h4 class="ta">Pink Women tshirt</h4>
+          <h3 class="pt">$45</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <div class="con mar-bottom">
-     <div>
-         <img class="im1 im-hover" src="data:image/jpeg;base64,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" alt="">
-         <h4 class="ta">Red Women Dress</h4><h3 class="pt">$85</h3>
-         <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-     </div>
-     <div>
-         <img class="im1 im-hover" src="https://png.pngtree.com/png-clipart/20230506/original/pngtree-elegant-white-dress-png-image_9143203.png" alt="">
-         <h4 class="ta" >Blue Women Top</h4><h3 class="pt">$70</h3>
-         <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-     </div>
-     <div>
-         <img class="im1 im-hover" src="https://static.vecteezy.com/system/resources/previews/034/715/596/large_2x/ai-generative-women-s-dress-on-a-white-background-isolated-dress-mockup-photo.jpg" alt="">
-         <h4 class="ta">White  Women Top</h4><h3 class="pt">$60</h3>
-         <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-     </div>
-     <div>
-        <img class="im1 im-hover" src="https://static.vecteezy.com/system/resources/previews/026/680/620/non_2x/pink-female-dress-mock-up-isolated-on-white-background-ai-generative-photo.jpg" alt="">
-        <h4 class="ta">Pink Women tshirt</h4><h3 class="pt">$45</h3>
-        <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
-    </div>
-  </div>
- </section>
+    <section>
+      <div class="con mar-bottom">
+        <div>
+          <img class="im1 im-hover"
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxARDxAQEA8QDQ8QEA8QEA0NDQ8PDQ0OFhIWFhURFRUYHiggGBolGxUTITEhMSkrLi4uFx8/ODMsNygtLisBCgoKDg0OGxAQGjAdHSUrNSstLTEtLTUtLSstLS0rKy0tLSsrLSsrKysrLS0uNy0tLS0tNC0tNTUtKystLSstLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAAAwQFAQIGB//EADcQAQABAwEEBggGAgMBAAAAAAABAgMRIQQFEjEiUWFxgbEGMkFyc5GhshMjJGLB8DM0Y+HxFf/EABkBAQADAQEAAAAAAAAAAAAAAAACAwQBBf/EACERAQACAgMAAwEBAQAAAAAAAAABAgMxESEyEhMiQVEE/9oADAMBAAIRAxEAPwD9xAAAAAAAAAAAAAAEO0VTHDicZrpie7KYAAAAAAAAAAAAAAAAAAAAAAAAAAAAEO0R6nv0plPatqpiYjPKYnlzWbVyKozDnI9gOgAAAAAAAAAAAAAAAAAAAAAAABMvM1xHtVN4zPR1xz+eilF+e/xwrnJETxKUVmYd26M1LmxXoinE6M+u7n2T9EN7eNuiK5mYzbp46qIqia4p9k8Ma6oxeOekopaeoh9FEuvkNz7VcvbXE03qqrUR+JNM01UcMVURi3iY1jlOc5icvr1sGTHNJ4kAdVgAAAAAAAAAAAAAAAAAAAAAK23UZp7pZszDYvRmmXz96qeKYnr07vYy5+p5XY+1iJpfMelGwxNdFyPxptxX+Jemn8ynhinHDFucc9J54zTGjbor1d2u1FyibeuK4mNJmMfJXjycTy0Yr/XblB6C7upooi7MTN2acTdrimJricTmnh0imep9azNwbJFq1FEYxTpmIimJnWapxGkZmctNsrPMcs+e/wA8kyAJKQAAAAAAAAAAAAAAAAAAAAABibws9LT2Nqqcay+c9JL1+LdyrZ6aa68R+HRVE5/Ezzq/byjsUf8ARx8VmPaGKZWLETmezEf36MqzXtVNHFdotccRHHTZqqrmOjM6RPPXDQ2Cm7iiblVETNM/iUU0TrXMRjE8U4xrpqxVnvhfOn0dijFMR2fVIi2e9FUdsc4SvTjjjplkAdcAAAAAAAAAAAAAAAAAAAAAeL1fDTM9UfUmeBU2q9mrEco81O5L1S5Wx2t8u18RwzrNWa7nvRH0wtUSobFOZue/PnK7Cqs8wnaO1vZL3DX2TpLXfPzziW3s1fFRE9mve04LfxTkj+pQGhWAAAAAAAAAAAAAAAAAAAAKu8KujEdcrSjt86xCGSfzKVdq1Lxdl7pRX5ZP4tZO6pzFfvS0PYy9wzmiuf3T/DUq5Kqd1W39Ey1N119GY6pyyV/ddfSx1wtxW4vCu8flqgNzOAAAAAAAAAAAAAAAAAAAAMza6s1S05ZFc5lTmnpOjsK20TpPisyp7XPRq7p8me2lsbZfo/H5Xfq06uTO9H/8MePnLRuclVPELL+peZWdhqxVTPbCtTyS2dHa7iUZ0+gHKZzET1w69JlAAAAAAAAAAAAAAAAAAAAeL09Ge6WVPrS0tqnoz4M2j2yoy7iFlHZUdunoVz+2ryXa5Z28p/Kuz/x1/bLPfS2u1X0e/wAFHdPm0L3JQ3D/AK9v3YXL86IV8Qnb3LkJbcq3EmtSjE9kw39kqzRT3YTKe7KuhMdUrj0qTzWGS2wBJwAAAAAAAAAAAAAAAAABW22dI8Z+UKFvl4rm8KvKfqpU8o8WbJ6W105clm74nGz3vhXPtloXGZv2f0974Vz7ZU5PMraeoR7kn9Pa9ynyhbv+r8lTc0fkWvh0fbC3f9X5eaFfCVvSFYtSrp7MIxHbstbdVWtUdcRPy/8AWiyN3VYrjtzDXb8M/llybAFqAAAAAAAAAAAAAAAAAADP3jOvhEfyr+yO5Jt89Lx/hFXOrLf1K6unitkekVX6a/8ACufbLXqYnpNP6a/8K79kqsviVmP1CxuyPyrfuU+ULF/1Z8PNDsEfl0+7Hkmv+rLkeXZ9KsTqt2eSn7YW7dSMbdlZ2erFUT1TDefO0zq37NWaaZ64hqwTuFGR7AaFQAAAAAAAAAAAAAAAADkyDK2ic1+Mz9UMzq9V1dKeyEMSxzPa+HuWH6Tf61/4N37JbdUsb0h/173baufbKGTzKeP1C3snqx3Qmu+rPdKLZvVhLX6s90kadnajVzWrapUnsVaIRtKdLcNrd9WbcdmYYlMtXdVWlUd0/wB+TRhn9KckdL4DUoAAAAAAAAAAAAAAAAHKozEx1w6AwrsYmrOk5x8kVMre9M8c6TjTE4nHJlzXVE66x2Mdo4s0V7harqZG/ZzZuR101R9F2raI7fkzd715tVd0ecK8k9LKR20tn9WEtXKVKjaJiMf3CS3tGdMeJE9Ex2qU3own2apTsbDcqxwUVVxzzTEzTjvXqdju24zXbqpjr0mPnHJDi20pmNLNuWluqrpzHXTLJtVS1d2UTNVNUROIzmcacutfjiflCm+muA2M4AAAAAAAAAAAAAAAAADkxnnr2Sq3t3W6vZwz+2f4WxyYiduxPDHublzyrjxp/wC0VXo3TXGLlczTppRHDM415z2t0Q+uv+JfOzD/APgY5VxMfup1+cJLe5ZzHFVHD7YiJ1jqbAfVU+yzlNMRERERERpERGIiHQWIIo2ejOeCnPXwxlKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//Z"
+            alt="">
+          <h4 class="ta">Red Women Dress</h4>
+          <h3 class="pt">$85</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+        <div>
+          <img class="im1 im-hover"
+            src="https://png.pngtree.com/png-clipart/20230506/original/pngtree-elegant-white-dress-png-image_9143203.png"
+            alt="">
+          <h4 class="ta">Blue Women Top</h4>
+          <h3 class="pt">$70</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+        <div>
+          <img class="im1 im-hover"
+            src="https://static.vecteezy.com/system/resources/previews/034/715/596/large_2x/ai-generative-women-s-dress-on-a-white-background-isolated-dress-mockup-photo.jpg"
+            alt="">
+          <h4 class="ta">White Women Top</h4>
+          <h3 class="pt">$60</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+        <div>
+          <img class="im1 im-hover"
+            src="https://static.vecteezy.com/system/resources/previews/026/680/620/non_2x/pink-female-dress-mock-up-isolated-on-white-background-ai-generative-photo.jpg"
+            alt="">
+          <h4 class="ta">Pink Women tshirt</h4>
+          <h3 class="pt">$45</h3>
+          <p class="sta">⭐⭐⭐⭐ <i class="bi bi-star sta1"></i></P>
+        </div>
+      </div>
+    </section>
 
-<section>
-    <h1 class="center">SILON JOURNAL</h1>
-    <div class="con">
-    <div>
-        <img class="im2" src="https://cdn.shopify.com/s/files/1/0601/5415/1102/files/retro-women-eyewear_a260d764-b0ca-446d-9a74-964ffd30a593_480x480.jpg?v=1694615620" alt="">
-        <h4 class="ta">01 june, 2019</h4><br><h4 class="pa">The World is beautiful,<br>
-             you just need to change your Glasses.<br></h4>
-    </div>
-    <div>
-        <img class="im2" src="https://i.pinimg.com/736x/c3/e3/dd/c3e3dd918be4abff41425dfb27848314.jpg" alt="">
-        <h4 class="ta">02 july, 2020</h4><br><h4 class="pa">We were divided by the land,<br>
+    <section>
+      <h1 class="center">SILON JOURNAL</h1>
+      <div class="con">
+        <div>
+          <img class="im2"
+            src="https://cdn.shopify.com/s/files/1/0601/5415/1102/files/retro-women-eyewear_a260d764-b0ca-446d-9a74-964ffd30a593_480x480.jpg?v=1694615620"
+            alt="">
+          <h4 class="ta">01 june, 2019</h4><br>
+          <h4 class="pa">The World is beautiful,<br>
+            you just need to change your Glasses.<br></h4>
+        </div>
+        <div>
+          <img class="im2" src="https://i.pinimg.com/736x/c3/e3/dd/c3e3dd918be4abff41425dfb27848314.jpg" alt="">
+          <h4 class="ta">02 july, 2020</h4><br>
+          <h4 class="pa">We were divided by the land,<br>
             Not by fancy purse and Shoes.<br></h4>
-    </div>
-    <div>
-        <img class="im2" src="https://zouk.co.in/cdn/shop/files/Jaipur_Fresco_Blue_Women_s_Office_Bag_9a5892c8-c967-4449-8979-a78a819f659c.jpg?v=1720694824&width=1500" alt="">
-        <h4 class="ta">03 Aug, 2021</h4><br><h4 class="pa">Beauty Lies in the eyes<br>of Fancy Bag holder.<br></h4>
-    </div>
-    <div>
-</section>
+        </div>
+        <div>
+          <img class="im2"
+            src="https://zouk.co.in/cdn/shop/files/Jaipur_Fresco_Blue_Women_s_Office_Bag_9a5892c8-c967-4449-8979-a78a819f659c.jpg?v=1720694824&width=1500"
+            alt="">
+          <h4 class="ta">03 Aug, 2021</h4><br>
+          <h4 class="pa">Beauty Lies in the eyes<br>of Fancy Bag holder.<br></h4>
+        </div>
+        <div>
+    </section>
 
-<section>
-    <h1 class="last">FOLLOW US</h1>
-    <div class="follow">
-      <div>
-         <button class="sm"><a href="https://www.facebook.com/" alt=""><i class="bi bi-facebook fb"></i></a></button>
+    <section>
+      <h1 class="last">FOLLOW US</h1>
+      <div class="follow">
+        <div>
+          <button class="sm"><a href="https://www.facebook.com/" alt=""><i class="bi bi-facebook fb"></i></a></button>
+        </div>
+        <div>
+          <button class="sm"><a href="https://x.com/" alt=""><i class="bi bi-twitter-x tw"></i></a></button>
+        </div>
+        <div>
+          <button class="sm"><a href="https://www.pinterest.com/" alt=""><i class="bi bi-pinterest pi"></i></a></button>
+        </div>
+        <div>
+          <button class="sm"><a href="https://www.instagram.com/" alt=""><i class="bi bi-instagram ig"></i></a></button>
+        </div>
       </div>
-      <div>
-         <button class="sm"><a href="https://x.com/" alt=""><i class="bi bi-twitter-x tw"></i></a></button>
-      </div>
-      <div>
-         <button class="sm"><a href="https://www.pinterest.com/" alt=""><i class="bi bi-pinterest pi"></i></a></button>
-      </div>
-      <div>
-         <button class="sm"><a href="https://www.instagram.com/" alt=""><i class="bi bi-instagram ig"></i></a></button>
-      </div>
-    </div>
- </section>
+    </section>
+    </main>
 
- <section class="footer">
-    <div class="end">
+    <section class="footer">
+      <div class="end">
         <ul>
-            <h4>ABOUT US</h4><br>
-            <li>Who we are</li>
-            <li>Work with us</li>
-            <li>Become a supplier</li>
-            <li>Investor relations</li>
-            <li>Our devices</li>
-            <li>Affiliate program</li>
+          <h4>ABOUT US</h4><br>
+          <li>Who we are</li>
+          <li>Work with us</li>
+          <li>Become a supplier</li>
+          <li>Investor relations</li>
+          <li>Our devices</li>
+          <li>Affiliate program</li>
         </ul>
-        
+
         <ul>
-         <h4>USEFUL LINKS</h4><br>
-         <li>Who we are</li>
-         <li>Work with us</li>
-         <li>Become a supplier</li>
-         <li>Investor relations</li>
-         <li>Our devices</li>
-         <li>Affiliate program</li>
-     </ul>
-     
-     <ul>
-      <h4>ONLINE SHOPPING</h4><br>
-      <li>Who we are</li>
-      <li>Work with us</li>
-      <li>Become a supplier</li>
-      <li>Investor relations</li>
-      <li>Our devices</li>
-      <li>Affiliate program</li>
-  </ul>
-  
-  <ul>
-    <h4>EXPERIENCE APP ON MOBILE</h4>
-    <li>
-    <div class="logos">
-      <div>
-         <button class="bt"> 
-         <div><i class="bi bi-android2 c"></i></div>
-         <div>GET IT ON<br>GOOGLE<br> PLAY</div>
-         </button>
-      </div>
+          <h4>USEFUL LINKS</h4><br>
+          <li>Who we are</li>
+          <li>Work with us</li>
+          <li>Become a supplier</li>
+          <li>Investor relations</li>
+          <li>Our devices</li>
+          <li>Affiliate program</li>
+        </ul>
 
-      <div>
-         <button class="bt"> 
-         <div><i class="bi bi-apple d"></i></div>
-         <div>GET IT ON<br>APPLE<br>STORE</div>
-         </button>
-      </div>
-    </div>
-    </li><br>
+        <ul>
+          <h4>ONLINE SHOPPING</h4><br>
+          <li>Who we are</li>
+          <li>Work with us</li>
+          <li>Become a supplier</li>
+          <li>Investor relations</li>
+          <li>Our devices</li>
+          <li>Affiliate program</li>
+        </ul>
 
-    <h4>FOLLOW US</h4>
-    <div class="gap">
-      <div>
-         <button class="sm"><a href="https://www.facebook.com/" target="blank"><i class="bi bi-facebook fb"></i></a></button>
+        <ul>
+          <h4>EXPERIENCE APP ON MOBILE</h4>
+          <li>
+            <div class="logos">
+              <div>
+                <button class="bt">
+                  <div><i class="bi bi-android2 c"></i></div>
+                  <div>GET IT ON<br>GOOGLE<br> PLAY</div>
+                </button>
+              </div>
+
+              <div>
+                <button class="bt">
+                  <div><i class="bi bi-apple d"></i></div>
+                  <div>GET IT ON<br>APPLE<br>STORE</div>
+                </button>
+              </div>
+            </div>
+          </li><br>
+
+          <h4>FOLLOW US</h4>
+          <div class="gap">
+            <div>
+              <button class="sm"><a href="https://www.facebook.com/" target="blank"><i
+                    class="bi bi-facebook fb"></i></a></button>
+            </div>
+            <div>
+              <button class="sm"><a href="https://x.com/" target="blank"><i class="bi bi-twitter-x tw"></i></a></button>
+            </div>
+            <div>
+              <button class="sm"><a href="https://www.pinterest.com/" target="blank"><i
+                    class="bi bi-pinterest pi"></i></a></button>
+            </div>
+            <div>
+              <button class="sm"><a href="https://www.instagram.com/" target="blank"><i
+                    class="bi bi-instagram ig"></i></a></button>
+            </div>
+          </div>
+        </ul>
       </div>
-      <div>
-         <button class="sm"><a href="https://x.com/" target="blank"><i class="bi bi-twitter-x tw"></i></a></button>
-      </div>
-      <div>
-         <button class="sm"><a href="https://www.pinterest.com/" target="blank"><i class="bi bi-pinterest pi"></i></a></button>
-      </div>
-      <div>
-         <button class="sm"><a href="https://www.instagram.com/" target="blank"><i class="bi bi-instagram ig"></i></a></button>
-      </div>
-    </div>
-  </ul>
-  </div>
-  <h4 class="bottom">Copyright © 2019 <span class="red">themeies.com</span> All rights reserved.</h4>
- </section>
- 
- 
- 
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
- <script src="form.js"></script>
+      <h4 class="bottom">Copyright © 2019 <span class="red">themeies.com</span> All rights reserved.</h4>
+    </section>
 
 
- </body>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="form.js"></script>
+
+
+</body>
+
 </html>
